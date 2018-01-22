@@ -40,7 +40,7 @@ describe Artist do
       expect(Artist.find_by_name('Miley Cyrus')).to eq(artist)
     end
 
-    xit "can reset the artists that have been created" do
+    it "can reset the artists that have been created" do
       Artist.reset_all
       expect(Artist.count).to eq(0)
     end
@@ -49,12 +49,12 @@ describe Artist do
   describe "with songs" do
     let(:song){Song.new}
 
-    xit "can have a song added" do
+    it "can have a song added" do
       artist.add_song(song)
       expect(artist.songs).to include(song)
     end
 
-    xit "knows how many songs it has" do
+    it "knows how many songs it has" do
       artist.add_songs([song, Song.new])
       expect(artist.songs.count).to eq(2)
     end
